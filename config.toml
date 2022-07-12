@@ -77,19 +77,19 @@ customJS = []
 # connectionString = "connectionString"
 
 # If you want to implement a Content-Security-Policy, add this section
-[params.csp]
-childsrc = ["'self'"]
-fontsrc = ["'self'", "https://fonts.gstatic.com", "https://cdn.jsdelivr.net/"]
-formaction = ["'self'"]
-framesrc = ["'self'"]
-imgsrc = ["'self'"]
-objectsrc = ["'none'"]
-stylesrc = [
-  "'self'",
-  "'unsafe-inline'",
-  "https://fonts.googleapis.com/",
-  "https://cdn.jsdelivr.net/"
-]
+#[params.csp]
+#childsrc = ["'self'"]
+#fontsrc = ["'self'", "https://fonts.gstatic.com", "https://cdn.jsdelivr.net/"]
+#formaction = ["'self'"]
+#framesrc = ["'self'"]
+#imgsrc = ["'self'"]
+#objectsrc = ["'none'"]
+#stylesrc = [
+#  "'self'",
+#  "'unsafe-inline'",
+#  "https://fonts.googleapis.com/",
+#  "https://cdn.jsdelivr.net/"
+#]
 scriptsrc = [
   "'self'",
   "'unsafe-inline'",
@@ -169,3 +169,14 @@ type = "application/rss+xml"
 
 [permalinks]
     posts = ":filename"
+
+[security]
+  enableInlineShortcodes = false
+[security.exec]
+ allow = ['^dart-sass-embedded$',  '^go$', '^npx$', '^postcss$']
+ osEnv = ['(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM)$']
+[security.funcs]
+ getenv = ['^HUGO_', '^GIT_COMMIT_SHA']
+[security.http]
+ methods = ['(?i)GET|POST']
+ urls = ['.*']
