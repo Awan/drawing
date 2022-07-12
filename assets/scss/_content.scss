@@ -1,0 +1,209 @@
+.content {
+  flex: 1;
+  display: flex;
+  margin-top: 1.6rem;
+  margin-bottom: 3.2rem;
+  article {
+    header {
+      margin-top: 6.4rem;
+      margin-bottom: 3.2rem;
+      h1 {
+        font-size: 4.2rem;
+        line-height: 4.6rem;
+        margin: 0;
+        @media only screen and (max-width : 768px) {
+          font-size: 4.0rem;
+          line-height: 4.4rem;
+        }
+      }
+    }
+    footer {
+      margin-top: 4.0rem;
+      .see-also {
+        margin: 3.2rem 0;
+        h3 {
+          margin: 3.2rem 0;
+        }
+      }
+    }
+  }
+  .post {
+    .post-title {
+      h1 {
+        font-family: $montserrat;
+        font-size: 5rem;
+        line-height: 6rem;
+        color: #222;
+      }
+      text-align: center;
+      margin-bottom: .75em;
+    }
+    .description {
+      color: #222;
+      text-align: center;
+      font-size: 2.5rem;
+      line-height: 4.6rem;
+    }
+    .post-meta {
+      .date {
+        text-align: center;
+        font-size: 1.6rem;
+        .posted-on {
+          margin-left: 0;
+          margin-right: 1.5rem;
+          line-height: 2rem;
+        }
+      }
+      .categories {
+        a {
+          color: #000;
+          text-decoration: none;
+        }
+        a:hover {
+          color: #135490;
+        }
+        font-size: 1.8rem;
+        text-align: center;
+        line-height: 4.4rem;
+      }
+    }
+
+    
+  }
+  figure {
+    margin: 0;
+    padding: 0;
+  }
+  figcaption p {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  
+  p:first-of-type {
+    font-size: 2.5rem;
+    line-height: 1.6;
+    font-family: "Open Sans",sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color: #373d3f;
+  }
+  p:first-of-type:first-letter {
+    font-family: 'Times New Roman', Times, serif;
+    float: left;
+    font-size: 80px;
+    line-height: 1;
+    margin-right: 9px;
+  }
+}
+
+.avatar img{
+  width: 20rem;
+  height: auto;
+  border-radius: 50%;
+  @media only screen and (max-width : 768px) {
+    width: 10rem;
+  }
+}
+
+.list {
+  ul {
+    margin: 3.2rem 0 3.2rem 0;
+    list-style: none;
+    padding: 0;
+    li {
+      font-size: 1.8rem;
+      @media only screen and (max-width : 768px) {
+        margin: 1.6rem 0 1.6rem 0;
+      }
+      .date {
+        display: inline-block;
+        width: 20.0rem;
+        text-align: right;
+        margin-right: 3.0rem;
+        @media only screen and (max-width : 768px) {
+          display: block;
+          text-align: left;
+        }
+      }
+      .title {
+        font-size: 1.8rem;
+        color: $fg-color;
+        font-family: $heading-font-family;
+        font-weight: 700;
+        &:hover,
+        &:focus {
+          color: $link-color
+        }
+      }
+    }
+  }
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .about {
+    text-align: center;
+    h1 {
+      margin-top: 2.0rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      margin-top: 1.0rem;
+      margin-bottom: 0.5rem;
+      font-size: 2.4rem;
+      @media only screen and (max-width : 768px) {
+        font-size: 2.0rem;
+      }
+    }
+    ul {
+      list-style: none;
+      margin: 3.0rem 0 1.0rem 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        position: relative;
+        a {
+          color: $fg-color;
+          text-transform: uppercase;
+          margin-left: 1.0rem;
+          margin-right: 1.0rem;
+          font-size: 1.6rem;
+          &:hover,
+          &:focus {
+            color: $link-color;
+          }
+          @media only screen and (max-width : 768px) {
+            font-size: 1.4rem;
+          }
+          i {
+            font-size: 3.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .error {
+    text-align: center;
+    h1 {
+      margin-top: 2.0rem;
+      margin-bottom: 0.5rem;
+      font-size: 4.6rem;
+      @media only screen and (max-width : 768px) {
+        font-size: 3.2rem;
+      }
+    }
+    h2 {
+      margin-top: 2.0rem;
+      margin-bottom: 3.2rem;
+      font-size: 3.2rem;
+      @media only screen and (max-width : 768px) {
+        font-size: 2.8rem;
+      }
+    }
+  }
+}

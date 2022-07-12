@@ -1,10 +1,11 @@
-baseURL = "https://abdullah.solutions/"
+baseURL = "https://abdullah.solutions"
 title = "Abdullah Khabir"
-theme = "hugo-coder"
+#theme = "hugo-coder"
 languageCode = "en"
 defaultContentLanguage = "en"
+canonifyurls = true
 paginate = 20
-pygmentsStyle = "bw"
+pygmentsStyle = "lovelace"
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 enableEmoji = true
@@ -13,17 +14,18 @@ enableEmoji = true
 
 [params]
 author = "Abdullah Khabir"
-font = "Source Sans Pro"
 license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
-description = "Abdullah Solutions"
+description = "AK Solutions"
 keywords = "blog,developer,personal,ethical_hacking,code,devops,linux,archlinux,bspwm,bash,sh,debian"
 info = ["Full Stack DevOps", "Cyber Security Analyst"]
 avatarURL = "/images/avatar.webp"
 #gravatar = "john.doe@example.com"
+hideCredits = true
+hideCopyright = false
 dateFormat = "January 2, 2006"
 since = 2022
 # Git Commit in Footer, uncomment the line below to enable it
-commit = "https://github.com/Awan/drawing/tree/"
+# commit = "https://github.com/Awan/drawing/tree/"
 # Right To Left, shift content direction for languagues such as Arabic
 rtl = false
 # Specify light/dark colorscheme
@@ -31,7 +33,7 @@ rtl = false
 # "auto" (use preference set by browser)
 # "dark" (dark background, light foreground)
 # "light" (light background, dark foreground) (default)
-colorScheme = "auto"
+colorScheme = "light"
 # Hide the toggle button, along with the associated vertical divider
 hideColorSchemeToggle = false
 # Series see also post count
@@ -142,28 +144,28 @@ url = "https://abdullah.solutions/index.xml"
 rel = "alternate"
 type = "application/rss+xml"
 
-[languages.en]
-languageName = ":us:"
+[[menu.main]]
+    name = "BLOG"
+    weight = 1
+    url = "posts/"
 
-[[languages.en.menu.main]]
-name = "About"
-weight = 1
-url = "about/"
+[deployment]
+    order = [".png$", ".jpg$", ".gif$", ".svg$", ".jpeg$"]
 
-[[languages.en.menu.main]]
-name = "Blog"
-weight = 2
-url = "posts/"
+[[deployment.targets]]
 
-#[[languages.en.menu.main]]
-#name = "Projects"
-#weight = 3
-#url = "projects/"
+    name = "abdullah.solutions"
+    URL = "s3 bucket"
+    cloudFrontDistributionID = "ID"
 
-[[languages.en.menu.main]]
-name = "Contact me"
-weight = 5
-url = "contact/"
+[[deployment.matchers]]
+    pattern = "^.+\\.(js|css|png|jpg|jpeg|gif|svg|ttf)$"
+    cacheControl = "max-age=630720000, no-transform, public"
+    gzip = true
+
+[[deployment.matchers]]
+    pattern = "^.+\\.(html|xml|json)$"
+    gzip = true
 
 [permalinks]
     posts = ":filename"
